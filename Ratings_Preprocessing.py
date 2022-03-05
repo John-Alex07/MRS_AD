@@ -4,7 +4,7 @@ import pandas as pd
 # In[41]:
 
 
-movie_ratings = pd.read_csv('ratings.csv', usecols=['movieId', 'rating'])
+movie_ratings = pd.read_csv('E:\\Python\\DATASETS\\ml-latest-small\\ratings.csv', usecols=['movieId', 'rating'])
 movie_ratings
 
 
@@ -24,7 +24,7 @@ movie_ratings
 # In[44]:
 
 
-movies = pd.read_csv('movies.csv', index_col='movieId')
+movies = pd.read_csv('E:\Python\DATASETS\ml-latest-small\movies.csv', index_col='movieId')
 movies
 
 
@@ -51,7 +51,6 @@ genre
 
 
 movies_by_genre = movies.loc[movies['genres'].str.find(genre) != -1]
-movies_by_genre.drop(columns='FOUND', inplace=True)
 
 
 # In[75]:
@@ -79,20 +78,13 @@ movie_list = []
 for x in YEAR_LIST:
      movie_list.append(YEAR_FILTER(x))
 movies = pd.concat(movie_list)
-movies
 
 
 # In[98]:
 
-
+pd.set_option("display.max_columns", 3)
 movie_final = pd.merge(movie_ratings,movies, left_index=True, right_index=True)
-movie_final.sort_values(by='rating', ascending=False)
+movie_final.sort_values(by='rating', ascending=False, inplace=True)
+print(movie_final)
 movie_selected = int(input("ENTER THE MOVIE ID : "))
 print(movie_final.loc[movie_selected])
-
-
-# In[ ]:
-
-
-
-
