@@ -45,4 +45,4 @@ movie_final = pd.merge(movie_ratings, movies, left_index=True, right_index=True)
 movie_final.sort_values(by='rating', ascending=False, inplace=True)
 print(movie_final)
 movie_selected = int(input("ENTER THE MOVIE ID : "))
-print(movie_final.loc[movie_selected])
+movie_selected = movie_final.loc[movie_selected]
