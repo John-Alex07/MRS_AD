@@ -5,7 +5,7 @@ movie_ratings = pd.read_csv('E:\\Python\\DATASETS\\ml-latest-small\\ratings.csv'
 movie_ratings.sort_values(by='movieId')
 
 
-movie_ratings = movie_ratings.groupby(['movieId']).mean()
+movie_ratings = round(movie_ratings.groupby(['movieId']).mean(), 1)
 movies = pd.read_csv('E:\\Python\\DATASETS\\ml-latest-small\\movies.csv', index_col='movieId')
 
 
