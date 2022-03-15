@@ -10,8 +10,8 @@ movies = pd.read_csv('E:\\Python\\DATASETS\\ml-latest-small\\movies.csv', index_
 
 
 genre = input("Enter the preferred Genre : ")
-genre_list = ['Action', 'Adventure', 'Animation', "Children's", 'Comedy', 'Crime', 'Documentary', 'Drama', 'Fantasy',
-              'Film-Noir', 'Horror', 'Musical', 'Mystery', 'Romance', 'Sci-Fi', 'Thriller', 'War', 'Western']
+genre_list = ['Action', 'IMAX', 'Adventure', 'Animation', "Children's", 'Comedy', 'Crime', 'Documentary', 'Drama',
+              'Fantasy', 'Film-Noir', 'Horror', 'Musical', 'Mystery', 'Romance', 'Sci-Fi', 'Thriller', 'War', 'Western']
 if genre not in genre_list:
     genre = dl.get_close_matches(genre, genre_list, n=1)
 
